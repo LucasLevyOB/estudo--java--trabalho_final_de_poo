@@ -1,10 +1,10 @@
 package unidadeFisica;
 
 public class UnidadeFisica {
-  int id;
-  String nome;
-  Endereco endereco;
-  Boolean status;
+  private int id;
+  private String nome;
+  private Endereco endereco;
+  private Boolean status;
 
   public UnidadeFisica(int id, String nome, Endereco endereco, Boolean status) {
     this.id = id;
