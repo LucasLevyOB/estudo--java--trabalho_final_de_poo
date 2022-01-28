@@ -8,6 +8,7 @@ public class UnidadeFisica {
 
   public UnidadeFisica(int id, String nome, Endereco endereco, Boolean status) {
     this.id = id;
+    
     this.nome = nome;
     this.endereco = endereco;
     this.status = status;

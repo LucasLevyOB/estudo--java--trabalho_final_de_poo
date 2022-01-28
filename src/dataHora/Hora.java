@@ -45,5 +45,6 @@ public class Hora {
   public String toString() {
     return this.horas + ":" + this.minutos;
   }
+  
 
 }
