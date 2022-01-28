@@ -17,7 +17,7 @@ public class Produto {
   }
   
   public String toString() {
-    return "Produto: " + nome + ", Descrição: " + descricao + ", Categoria: " + categoria.getNome() + ", Quantidade: " + quantidadeEmEstoque + ", quantidade minima: " + quantidadeMinima + ", Status:" + status;
+    return "\n\tNome: " + nome + "\n\tDescrição: " + descricao + "\n\tCategoria: " + categoria.getNome() + "\n\tQuantidade: " + quantidadeEmEstoque + "\n\tquantidade Mínima: " + quantidadeMinima + ", Ativo:" + (status ? "sim" : "não");
   }
 
   

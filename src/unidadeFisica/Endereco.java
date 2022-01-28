@@ -13,7 +13,7 @@ public class Endereco {
   }
 
   public String toString() {
-    return cidade + ", " + bairro + ", " + rua + ", " + numero + "º";
+    return cidade + ", " + bairro + ", " + rua + ", " + numero;
   }
 
   

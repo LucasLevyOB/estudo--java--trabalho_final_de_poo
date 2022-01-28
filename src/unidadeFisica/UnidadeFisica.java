@@ -8,7 +8,6 @@ public class UnidadeFisica {
 
   public UnidadeFisica(int id, String nome, Endereco endereco, Boolean status) {
     this.id = id;
-    
     this.nome = nome;
     this.endereco = endereco;
     this.status = status;
@@ -19,6 +18,6 @@ public class UnidadeFisica {
   }
 
   public String toString() {
-    return "Nome: " + nome + "\n Status: " + status + "\n Endereço: " + endereco;
+    return "\n\tNome: " + nome + "\n\t Unidade Ativa: " + (status ? "sim" : "não") + "\n\t Endereço: " + endereco;
   }
 }

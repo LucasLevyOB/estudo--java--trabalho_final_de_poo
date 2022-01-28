@@ -12,5 +12,8 @@ public class Saida extends Movimento{
     this.destino = destino;
   }
 
-  
+  public String toString() {
+    String resultado = "de Destino: [" + destino + "\n\t Data: " + super.data + "\n]";
+    return resultado; 
+  }
 }

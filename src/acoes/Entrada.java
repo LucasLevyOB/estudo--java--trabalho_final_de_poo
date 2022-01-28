@@ -12,5 +12,8 @@ public class Entrada extends Movimento{
     this.origem = origem;
   }
 
-  
+  public String toString() {
+    String resultado = "de Origem: [" + origem + "\n\t Data: " + super.data + "\n]";
+    return resultado; 
+  }
 }
