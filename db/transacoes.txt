@@ -1,0 +1,110 @@
+Entrada
+1
+125
+1
+Sardinha
+Sardinha 350 gramas
+125
+12
+1
+Enlatados
+Categoria de enlatados
+true
+1
+Mercado Canindé
+Canindé
+Bairro
+Rua
+123
+true
+2022-02-04
+12
+12
+Saida
+2
+125
+1
+Sardinha
+Sardinha 350 gramas
+0
+12
+1
+Enlatados
+Categoria de enlatados
+false
+2
+Mercado Quixadá
+Quixadá
+Bairro
+Rua
+123
+true
+2022-02-04
+14
+23
+Entrada
+3
+125
+2
+Sardinha
+Sardinha 350 gramas
+125
+12
+1
+Enlatados
+Categoria de enlatados
+true
+1
+Mercado Canindé
+Canindé
+Bairro
+Rua
+123
+true
+2022-02-04
+16
+12
+Entrada
+4
+90
+3
+Queijo
+Queijo de 1 kg.
+90
+5
+2
+Laticínio
+Categoria de Laticínios.
+true
+2
+Mercado Quixadá
+Quixadá
+Bairro
+Rua
+123
+true
+2022-02-04
+10
+30
+Saida
+5
+12
+3
+Queijo
+Queijo de 1 kg.
+78
+5
+2
+Laticínio
+Categoria de Laticínios.
+true
+1
+Mercado Canindé
+Canindé
+Bairro
+Rua
+123
+true
+2022-02-04
+14
+13

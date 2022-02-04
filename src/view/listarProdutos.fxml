@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListarProdutos">
+   <children>
+      <TableView fx:id="tabela" layoutX="9.0" layoutY="89.0" prefHeight="200.0" prefWidth="508.0">
+        <columns>
+          <TableColumn fx:id="colunaNome" prefWidth="90.0" text="Nome" />
+          <TableColumn fx:id="colunaCategoria" prefWidth="95.0" text="Categoria" />
+            <TableColumn fx:id="colunaDescricao" prefWidth="197.0" text="Descriçao" />
+            <TableColumn fx:id="colunaQuantidade" prefWidth="66.0" text="Quantidade" />
+            <TableColumn fx:id="colunaAtivo" prefWidth="59.0" text="Ativo" />
+        </columns>
+      </TableView>
+      <Label layoutY="41.0" prefHeight="20.0" prefWidth="525.0" style="-fx-font-size: 16; -fx-alignment: center;" text="Lista de Produtos" />
+      <Button layoutX="420.0" layoutY="309.0" mnemonicParsing="false" onAction="#getTheUserFilePath" text="Exportar" />
+   </children>
+</AnchorPane>

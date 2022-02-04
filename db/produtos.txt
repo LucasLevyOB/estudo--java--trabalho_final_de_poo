@@ -1,0 +1,18 @@
+3
+Queijo
+Queijo de 1 kg.
+78
+5
+2
+Laticínio
+Categoria de Laticínios.
+true
+2
+Sardinha
+Sardinha 350 gramas
+125
+12
+1
+Enlatados
+Categoria de enlatados
+true

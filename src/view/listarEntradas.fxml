@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ListarEntradas">
+   <children>
+      <TableView fx:id="tabela" layoutX="9.0" layoutY="89.0" prefHeight="200.0" prefWidth="510.0">
+        <columns>
+          <TableColumn fx:id="colunaDataHora" prefWidth="90.0" text="Data/Hora" />
+          <TableColumn fx:id="colunaOrigem" prefWidth="154.0" text="Origem" />
+            <TableColumn fx:id="colunaProduto" prefWidth="151.0" text="Produto" />
+            <TableColumn fx:id="colunaQuantidade" prefWidth="118.0" text="Quantidade" />
+        </columns>
+      </TableView>
+      <Label layoutY="41.0" prefHeight="16.0" prefWidth="425.0" style="-fx-font-size: 16; -fx-alignment: center;" text="Lista de Entradas" />
+      <Button layoutX="420.0" layoutY="309.0" mnemonicParsing="false" onAction="#getTheUserFilePath" text="Exportar" />
+   </children>
+</AnchorPane>

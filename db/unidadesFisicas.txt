@@ -1,0 +1,14 @@
+Mercado Canindé
+1
+Canindé
+Bairro
+Rua
+123
+true
+Mercado Quixadá
+2
+Quixadá
+Bairro
+Rua
+123
+true

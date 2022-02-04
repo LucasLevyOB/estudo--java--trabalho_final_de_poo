@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastrarSaidas">
+   <children>
+      <Label layoutY="40.0" prefHeight="20.0" prefWidth="525.0" style="-fx-alignment: center; -fx-font-size: 16;" text="Cadastro de Saidas" textAlignment="CENTER" />
+      <Group layoutX="54.0" layoutY="85.0" style="-fx-translate-x: 50;">
+         <children>
+            <Label layoutX="6.0" style="-fx-font-size: 14;" text="Dados gerais da saida" />
+            <Group layoutX="5.0" layoutY="35.0">
+               <children>
+                  <Label layoutY="4.0" text="Data:" />
+                  <DatePicker fx:id="dataSaida" layoutX="45.0" layoutY="2.0" />
+               </children>
+            </Group>
+            <Group layoutX="5.0" layoutY="70.0">
+               <children>
+                  <Label layoutY="2.0" text="Hora:" />
+                  <TextField fx:id="horaSaida" layoutX="47.0" prefHeight="24.0" prefWidth="61.0" />
+               </children>
+            </Group>
+            <Group layoutX="4.0" layoutY="258.0">
+               <children>
+                  <TextField fx:id="quantidadeSaida" layoutX="90.0" prefHeight="24.0" prefWidth="61.0" />
+                  <Label layoutY="2.0" text="Quantidade:" />
+               </children>
+            </Group>
+            <Group layoutX="4.0" layoutY="104.0">
+               <children>
+                  <Label layoutY="2.0" text="Minutos:" />
+                  <TextField fx:id="minutoSaida" layoutX="66.0" prefHeight="24.0" prefWidth="61.0" />
+               </children>
+            </Group>
+            <Group layoutX="5.0" layoutY="198.0">
+               <children>
+                  <Label text="Produto:" />
+                  <ChoiceBox fx:id="produtoSaida" layoutX="1.0" layoutY="24.0" prefHeight="24.0" prefWidth="290.0" />
+               </children>
+            </Group>
+            <Group layoutX="5.0" layoutY="139.0">
+               <children>
+                  <Label text="Unidade de Destino:" />
+                  <ChoiceBox fx:id="destinoSaida" layoutX="1.0" layoutY="24.0" prefHeight="24.0" prefWidth="290.0" />
+               </children>
+            </Group>
+         </children>
+      </Group>
+      <Button layoutX="413.0" layoutY="387.0" mnemonicParsing="false" onAction="#cadastrarSaida" text="Cadastrar" />
+   </children>
+</AnchorPane>

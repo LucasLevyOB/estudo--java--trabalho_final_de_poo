@@ -3,12 +3,14 @@ package movimento;
 import dataHora.DataHora;
 
 public abstract class Movimento {
-  private int id;
   protected DataHora data;
   
-  public Movimento(int id, DataHora data) {
-    this.id = id;
+  public Movimento(DataHora data) {
     this.data = data;
+  }
+
+  public DataHora getData() {
+    return data;
   }
 
 }

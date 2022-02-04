@@ -3,6 +3,14 @@ package dataHora;
 public class Hora {
   private byte horas, minutos;
 
+  public byte getHoras() {
+    return horas;
+  }
+
+  public byte getMinutos() {
+    return minutos;
+  }
+
   private boolean verificaMinutos(byte minutos) {
     if (minutos >= 0 && minutos < 60)
       return true;

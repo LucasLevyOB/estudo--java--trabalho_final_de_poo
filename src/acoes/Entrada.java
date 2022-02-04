@@ -4,16 +4,36 @@ import dataHora.DataHora;
 import movimento.Movimento;
 import unidadeFisica.UnidadeFisica;
 
-public class Entrada extends Movimento{
+public class Entrada extends Movimento {
   private UnidadeFisica origem;
 
-  public Entrada(int id, UnidadeFisica origem, DataHora data) {
-    super(id, data);
+  public Entrada(UnidadeFisica origem, DataHora data) {
+    super(data);
     this.origem = origem;
   }
 
+  public String getOrigem() {
+    return origem.getNome();
+  }
+
+  public String getNomeOrigem() {
+    return origem.getNome();
+  }
+
+  public String getDataHora() {
+    return super.data.toString();
+  }
+
   public String toString() {
-    String resultado = "de Origem: [" + origem + "\n\t Data: " + super.data + "\n]";
-    return resultado; 
+    return origem.getId()
+        + "\n" + origem.getNome()
+        + "\n" + origem.getEnderecoObj().getCidade()
+        + "\n" + origem.getEnderecoObj().getBairro()
+        + "\n" + origem.getEnderecoObj().getRua()
+        + "\n" + origem.getEnderecoObj().getNumero()
+        + "\n" + origem.getStatus()
+        + "\n" + super.getData().getData()
+        + "\n" + super.getData().getHora().getHoras()
+        + "\n" + super.getData().getHora().getMinutos();
   }
 }

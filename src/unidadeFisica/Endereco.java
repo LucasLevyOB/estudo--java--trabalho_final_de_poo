@@ -12,6 +12,24 @@ public class Endereco {
     
   }
 
+  
+
+  public String getCidade() {
+    return cidade;
+  }
+
+  public String getBairro() {
+    return bairro;
+  }
+
+  public String getRua() {
+    return rua;
+  }
+
+  public int getNumero() {
+    return numero;
+  }
+
   public String toString() {
     return cidade + ", " + bairro + ", " + rua + ", " + numero;
   }
