@@ -7,8 +7,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import javax.security.auth.callback.Callback;
-
 import armazem.Armazem;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -16,13 +14,11 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import produto.Categoria;
 import produto.Produto;
 
 public class ListarProdutos implements Initializable {
@@ -104,6 +100,6 @@ public class ListarProdutos implements Initializable {
 
   private ObservableList<Produto> listaDeClientes() {
     return FXCollections.observableArrayList(
-        armazem.getProdutos().values());
+        armazem.getProdutosOrdenados());
   }
 }

@@ -5,6 +5,13 @@ Bairro
 Rua
 123
 true
+Mercado Caridade
+3
+Caridade
+Bairro
+Rua
+123
+true
 Mercado Quixadá
 2
 Quixadá

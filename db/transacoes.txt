@@ -108,3 +108,91 @@ true
 2022-02-04
 14
 13
+Entrada
+6
+12
+4
+Iorgute
+Descrição
+12
+1
+2
+Laticínio
+Categoria de Laticínios.
+true
+1
+Mercado Canindé
+Canindé
+Bairro
+Rua
+123
+true
+2022-02-04
+12
+12
+Saida
+7
+12
+4
+Iorgute
+Descrição
+0
+1
+2
+Laticínio
+Categoria de Laticínios.
+false
+1
+Mercado Canindé
+Canindé
+Bairro
+Rua
+123
+true
+2022-02-04
+12
+14
+Entrada
+8
+15
+5
+Iorgute
+Descrição
+15
+1
+2
+Laticínio
+Categoria de Laticínios.
+true
+1
+Mercado Canindé
+Canindé
+Bairro
+Rua
+123
+true
+2022-02-04
+12
+12
+Saida
+9
+15
+5
+Iorgute
+Descrição
+0
+1
+2
+Laticínio
+Categoria de Laticínios.
+false
+2
+Mercado Quixadá
+Quixadá
+Bairro
+Rua
+123
+true
+2022-02-04
+12
+13

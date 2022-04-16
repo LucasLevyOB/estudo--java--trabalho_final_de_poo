@@ -16,3 +16,12 @@ Sardinha 350 gramas
 Enlatados
 Categoria de enlatados
 true
+5
+Iorgute
+Descrição
+0
+1
+2
+Laticínio
+Categoria de Laticínios.
+false

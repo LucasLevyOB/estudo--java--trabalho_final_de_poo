@@ -7,6 +7,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Map;
 
 import acoes.Entrada;
@@ -14,9 +15,13 @@ import acoes.Saida;
 import dataHora.DataHora;
 import movimento.Movimento;
 import produto.Categoria;
+import produto.CategoriaException;
 import produto.Produto;
+import produto.ProdutoException;
 import transacao.Transacao;
+import transacao.TransacaoException;
 import unidadeFisica.UnidadeFisica;
+import unidadeFisica.UnidadeFisicaException;
 
 public class Armazem {
   private int idProximoProduto, idProximaCategoria, idProximaTransacao, idProximaUnidadeFisica;
@@ -41,7 +46,7 @@ public class Armazem {
     return instance;
   }
 
-  public void entrada(int quantidade, Produto produto, UnidadeFisica unidade, DataHora data) {
+  public void entrada(int quantidade, Produto produto, UnidadeFisica unidade, DataHora data) throws TransacaoException {
     produto.setId(this.idProximoProduto);
     produto.setStatus(true);
     Movimento acao = new Entrada(unidade, data);
@@ -52,21 +57,22 @@ public class Armazem {
     salvarTransacao(entrada);
     atuliazarIds();
   }
-  
-  public void adicionarProduto(Produto produto) {
+
+  public void adicionarProduto(Produto produto) throws ProdutoException {
     this.produtos.put(produto.getNome(), produto);
     this.idProximoProduto++;
     Produto.cadastrarUnidades(produtos.values());
     atuliazarIds();
   }
 
-  // esse método organiza os valores da transacao, para serem salvos no arquivo txt
-  private void salvarTransacao(Transacao t) {
+  // esse método organiza os valores da transacao, para serem salvos no arquivo
+  // txt
+  private void salvarTransacao(Transacao t) throws TransacaoException {
     ArrayList<String> lista = Transacao.readList();
     if (t.getAcao() instanceof Entrada)
       lista.add("Entrada");
     else
-    lista.add("Saida");
+      lista.add("Saida");
     lista.add(t.getId() + "");
     lista.add(t.getQuantidade() + "");
     lista.add(t.getProduto().getId() + "");
@@ -77,7 +83,7 @@ public class Armazem {
     lista.add(t.getProduto().getCategoria().getId() + "");
     lista.add(t.getProduto().getCategoria().getNome());
     lista.add(t.getProduto().getCategoria().getDescricao());
-    lista.add(t.getProduto().getStatus()+"");
+    lista.add(t.getProduto().getStatus() + "");
     if (t.getAcao() instanceof Entrada)
       lista.add(t.getEntrada().toString());
     else
@@ -85,7 +91,10 @@ public class Armazem {
     Transacao.writeList(lista);
   }
 
-  public void saida(String key, int quantidade, UnidadeFisica unidade, DataHora data) {
+  public void saida(String key,
+      int quantidade,
+      UnidadeFisica unidade,
+      DataHora data) throws TransacaoException {
     if (this.produtos.get(key).getQuantidade() - quantidade >= 0) {
       Movimento acao = new Saida(unidade, data);
       Transacao saida = new Transacao(idProximaTransacao, quantidade, acao, this.produtos.get(key));
@@ -103,24 +112,26 @@ public class Armazem {
     }
   }
 
-  public ArrayList<Transacao> listarEntradas() {
+  public ArrayList<Transacao> listarEntradas() throws TransacaoException {
     ArrayList<Transacao> resultadoEntrada = new ArrayList<Transacao>();
     for (Transacao value : this.transacoes.values())
       if (value.getAcao() instanceof Entrada)
         resultadoEntrada.add(value);
+    Collections.sort(resultadoEntrada);
     return resultadoEntrada;
   }
 
-  public ArrayList<Transacao> listarSaidas() {
+  public ArrayList<Transacao> listarSaidas() throws TransacaoException {
     ArrayList<Transacao> resultadoSaida = new ArrayList<Transacao>();
     for (Transacao value : this.transacoes.values())
       if (value.getAcao() instanceof Saida) {
         resultadoSaida.add(value);
       }
+    Collections.sort(resultadoSaida);
     return resultadoSaida;
   }
 
-  public void adicionarUnidadeFisica(UnidadeFisica unidadeFisica) {
+  public void adicionarUnidadeFisica(UnidadeFisica unidadeFisica) throws UnidadeFisicaException {
     unidadeFisica.setId(idProximaUnidadeFisica);
     unidadesFisicas.put(unidadeFisica.getNome(), unidadeFisica);
     UnidadeFisica.cadastrarUnidades(unidadesFisicas.values());
@@ -128,14 +139,14 @@ public class Armazem {
     atuliazarIds();
   }
 
-  public void adicionarCategoria(String nome, String descricao) {
+  public void adicionarCategoria(String nome, String descricao) throws CategoriaException {
     this.categorias.put(nome, new Categoria(idProximaCategoria, nome, descricao));
     Categoria.cadastrarCategoria(categorias.values());
     idProximaCategoria++;
     atuliazarIds();
   }
 
-  public void removerCategoria(String chave) {
+  public void removerCategoria(String chave) throws CategoriaException {
     this.categorias.remove(chave);
     Categoria.cadastrarCategoria(categorias.values());
   }
@@ -155,7 +166,7 @@ public class Armazem {
       System.out.println("\nerror: There was a problem reading the file");
     }
   }
-  
+
   public void atuliazarIds() {
     try {
       FileWriter arq = new FileWriter("db/ids.txt");
@@ -170,31 +181,49 @@ public class Armazem {
     }
   }
 
-  public Map<String, Produto> getProdutos() {
+  public ArrayList<Produto> getProdutosOrdenados() throws ProdutoException {
+    ArrayList<Produto> produtosResultado = new ArrayList<Produto>(produtos.values());
+    Collections.sort(produtosResultado);
+    return produtosResultado;
+  }
+
+  public ArrayList<Categoria> getCategoriasOrdenadas() throws CategoriaException {
+    ArrayList<Categoria> categoriasResultado = new ArrayList<Categoria>(categorias.values());
+    Collections.sort(categoriasResultado);
+    return categoriasResultado;
+  }
+
+  public ArrayList<UnidadeFisica> getUnidadesOrdenadas() throws UnidadeFisicaException {
+    ArrayList<UnidadeFisica> unidadesResultado = new ArrayList<UnidadeFisica>(unidadesFisicas.values());
+    Collections.sort(unidadesResultado);
+    return unidadesResultado;
+  }
+
+  public Map<String, Produto> getProdutos() throws ProdutoException {
     return produtos;
   }
 
-  public Map<String, Categoria> getCategorias() {
+  public Map<String, Categoria> getCategorias() throws CategoriaException {
     return categorias;
   }
 
-  public Map<String, UnidadeFisica> getUnidades() {
+  public Map<String, UnidadeFisica> getUnidades() throws UnidadeFisicaException {
     return unidadesFisicas;
   }
 
-  public Map<Integer, Transacao> getTrasacoes() {
+  public Map<Integer, Transacao> getTrasacoes() throws TransacaoException {
     return transacoes;
   }
 
-  public Produto getProduto(String chave) {
+  public Produto getProduto(String chave) throws ProdutoException {
     return produtos.get(chave);
   }
 
-  public Categoria getCategoria(String chave) {
+  public Categoria getCategoria(String chave) throws CategoriaException {
     return categorias.get(chave);
   }
 
-  public UnidadeFisica getUnidadeFisica(String chave) {
+  public UnidadeFisica getUnidadeFisica(String chave) throws UnidadeFisicaException{
     return unidadesFisicas.get(chave);
   }
 }

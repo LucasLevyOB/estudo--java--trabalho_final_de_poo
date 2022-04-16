@@ -16,7 +16,7 @@
                   <Insets />
                </opaqueInsets>
             </Label>
-            <Button fx:id="cadastrarEntradas" defaultButton="true" mnemonicParsing="false" onAction="#navegarParaCadastrarEntradas" prefHeight="24.0" prefWidth="155.0" text="Cadastrar Entradas" />
+            <Button fx:id="cadastrarEntradas" mnemonicParsing="false" onAction="#navegarParaCadastrarEntradas" prefHeight="24.0" prefWidth="155.0" text="Cadastrar Entradas" />
             <Button fx:id="listarEntradas" mnemonicParsing="false" onAction="#navegarParaListarEntradas" prefHeight="24.0" prefWidth="155.0" text="Listar Entradas" />
             <Button fx:id="cadastrarSaida" mnemonicParsing="false" onAction="#navegarParaCadastrarSaidas" prefHeight="24.0" prefWidth="155.0" text="Cadastrar Saidas" />
             <Button fx:id="listarSaidas" mnemonicParsing="false" onAction="#navegarParaListarSaidas" prefHeight="24.0" prefWidth="155.0" text="Listar Saidas" />

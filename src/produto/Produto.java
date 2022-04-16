@@ -11,7 +11,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Produto {
+public class Produto implements Comparable<Produto> {
   private int id, quantidadeEmEstoque, quantidadeMinima;
   private String nome;
   private String descricao;
@@ -27,51 +27,6 @@ public class Produto {
     this.quantidadeMinima = quantidadeMinima;
     this.categoria = categoria;
     this.status = status;
-  }
-
-  public void setQuantidade(int quantidade) {
-    if (quantidade >= 0)
-      this.quantidadeEmEstoque = quantidade;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-
-  public void setStatus(Boolean status) {
-    this.status = status;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public int getQuantidade() {
-    return quantidadeEmEstoque;
-  }
-
-  public int getQuantidadeMinima() {
-    return quantidadeMinima;
-  }
-
-  public String getNome() {
-    return nome;
-  }
-
-  public Categoria getCategoria() {
-    return categoria;
-  }
-
-  public String getDescricao() {
-    return descricao;
-  }
-
-  public int getQuantidadeEmEstoque() {
-    return quantidadeEmEstoque;
-  }
-
-  public Boolean getStatus() {
-    return status;
   }
 
   public static void cadastrarUnidades(Collection<Produto> lista) {
@@ -147,6 +102,56 @@ public class Produto {
       System.out.println("\nerror: There was a problem reading the file");
     }
     return resultado;
+  }
+
+  @Override
+  public int compareTo(Produto produtoComparado) {
+    return Integer.compare(this.id, produtoComparado.getId());
+  }
+
+  public void setQuantidade(int quantidade) {
+    if (quantidade >= 0)
+      this.quantidadeEmEstoque = quantidade;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public void setStatus(Boolean status) {
+    this.status = status;
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public int getQuantidade() {
+    return quantidadeEmEstoque;
+  }
+
+  public int getQuantidadeMinima() {
+    return quantidadeMinima;
+  }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public Categoria getCategoria() {
+    return categoria;
+  }
+
+  public String getDescricao() {
+    return descricao;
+  }
+
+  public int getQuantidadeEmEstoque() {
+    return quantidadeEmEstoque;
+  }
+
+  public Boolean getStatus() {
+    return status;
   }
 
   public String toString() {

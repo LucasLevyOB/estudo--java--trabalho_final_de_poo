@@ -1,3 +1,11 @@
+# Sistema de Gerenciamento de Estoque
+
+Trabalho final da disciplina de POO, ministrada pelo professor Atílio Gomes, utilizando a linguagem Java.
+
+- Interface em JavaFX
+- Persistência de dados em arquivos txt
+- Criação de relatórios
+
 ## Getting Started
 
 Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.

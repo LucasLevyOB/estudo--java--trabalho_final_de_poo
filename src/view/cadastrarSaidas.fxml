@@ -8,7 +8,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="457.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastrarSaidas">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastrarSaidas">
    <children>
       <Label layoutY="40.0" prefHeight="20.0" prefWidth="525.0" style="-fx-alignment: center; -fx-font-size: 16;" text="Cadastro de Saidas" textAlignment="CENTER" />
       <Group layoutX="54.0" layoutY="85.0" style="-fx-translate-x: 50;">
@@ -20,31 +20,31 @@
                   <DatePicker fx:id="dataSaida" layoutX="45.0" layoutY="2.0" />
                </children>
             </Group>
-            <Group layoutX="5.0" layoutY="70.0">
+            <Group layoutX="5.0" layoutY="72.0">
                <children>
                   <Label layoutY="2.0" text="Hora:" />
                   <TextField fx:id="horaSaida" layoutX="47.0" prefHeight="24.0" prefWidth="61.0" />
                </children>
             </Group>
-            <Group layoutX="4.0" layoutY="258.0">
+            <Group layoutX="4.0" layoutY="260.0">
                <children>
                   <TextField fx:id="quantidadeSaida" layoutX="90.0" prefHeight="24.0" prefWidth="61.0" />
                   <Label layoutY="2.0" text="Quantidade:" />
                </children>
             </Group>
-            <Group layoutX="4.0" layoutY="104.0">
+            <Group layoutX="4.0" layoutY="106.0">
                <children>
                   <Label layoutY="2.0" text="Minutos:" />
                   <TextField fx:id="minutoSaida" layoutX="66.0" prefHeight="24.0" prefWidth="61.0" />
                </children>
             </Group>
-            <Group layoutX="5.0" layoutY="198.0">
+            <Group layoutX="5.0" layoutY="200.0">
                <children>
                   <Label text="Produto:" />
                   <ChoiceBox fx:id="produtoSaida" layoutX="1.0" layoutY="24.0" prefHeight="24.0" prefWidth="290.0" />
                </children>
             </Group>
-            <Group layoutX="5.0" layoutY="139.0">
+            <Group layoutX="5.0" layoutY="141.0">
                <children>
                   <Label text="Unidade de Destino:" />
                   <ChoiceBox fx:id="destinoSaida" layoutX="1.0" layoutY="24.0" prefHeight="24.0" prefWidth="290.0" />

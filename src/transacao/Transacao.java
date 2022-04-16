@@ -20,7 +20,7 @@ import produto.Produto;
 import unidadeFisica.Endereco;
 import unidadeFisica.UnidadeFisica;
 
-public class Transacao {
+public class Transacao implements Comparable<Transacao>{
   private int id, quantidade;
   private Movimento acao;
   private Produto produto;
@@ -30,36 +30,6 @@ public class Transacao {
     this.quantidade = quantidade;
     this.acao = acao;
     this.produto = produto;
-  }
-
-  public int getId() {
-    return this.id;
-  }
-
-  public Movimento getAcao() {
-    return this.acao;
-  }
-
-  public String getData() {
-    return acao.getData().toString();
-  }
-
-  public Entrada getEntrada() {
-    Entrada entrada = (Entrada) acao;
-    return entrada;
-  }
-
-  public Saida getSaida() {
-    Saida entrada = (Saida) acao;
-    return entrada;
-  }
-
-  public Produto getProduto() {
-    return produto;
-  }
-
-  public Integer getQuantidade() {
-    return quantidade;
   }
 
   public static void writeList(ArrayList<String> lista) {
@@ -205,6 +175,41 @@ public class Transacao {
       System.out.println("\nerror: There was a problem reading the file");
     }
     return resultado;
+  }
+
+  public int getId() {
+    return this.id;
+  }
+
+  public Movimento getAcao() {
+    return this.acao;
+  }
+
+  public String getData() {
+    return acao.getData().toString();
+  }
+
+  public Entrada getEntrada() {
+    Entrada entrada = (Entrada) acao;
+    return entrada;
+  }
+
+  public Saida getSaida() {
+    Saida entrada = (Saida) acao;
+    return entrada;
+  }
+
+  public Produto getProduto() {
+    return produto;
+  }
+
+  public Integer getQuantidade() {
+    return quantidade;
+  }
+
+  @Override
+  public int compareTo(Transacao tran) {
+    return Integer.compare(this.id, tran.getId());
   }
 
   public String toString() {

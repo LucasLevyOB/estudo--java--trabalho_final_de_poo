@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class UnidadeFisica {
+public class UnidadeFisica implements Comparable<UnidadeFisica>{
   private int id;
   private String nome;
   private Endereco endereco;
@@ -21,30 +21,6 @@ public class UnidadeFisica {
     this.nome = nome;
     this.endereco = endereco;
     this.status = status;
-  }
-
-  public void setId(int id) {
-    this.id = id;
-  }
-  
-  public int getId() {
-    return this.id;
-  }
-
-  public String getNome() {
-    return nome;
-  }
-
-  public String getEndereco() {
-    return endereco.toString();
-  }
-
-  public Endereco getEnderecoObj() {
-    return endereco;
-  }
-
-  public Boolean getStatus() {
-    return status;
   }
 
   public static void cadastrarUnidades(Collection<UnidadeFisica> lista) {
@@ -75,7 +51,9 @@ public class UnidadeFisica {
       String tempReg = stream.readLine();
       while (tempReg != null) {
         resultado.put(tempReg,
-            new UnidadeFisica(Integer.parseInt(stream.readLine()), tempReg, new Endereco(stream.readLine(), stream.readLine(), stream.readLine(), Integer.parseInt(stream.readLine())), Boolean.parseBoolean(stream.readLine())));
+            new UnidadeFisica(Integer.parseInt(stream.readLine()), tempReg, new Endereco(stream.readLine(),
+                stream.readLine(), stream.readLine(), Integer.parseInt(stream.readLine())),
+                Boolean.parseBoolean(stream.readLine())));
         tempReg = stream.readLine();
       }
       stream.close();
@@ -85,6 +63,35 @@ public class UnidadeFisica {
       System.out.println("\nerror: There was a problem reading the file");
     }
     return resultado;
+  }
+  
+  public void setId(int id) {
+    this.id = id;
+  }
+  
+  public int getId() {
+    return this.id;
+  }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public String getEndereco() {
+    return endereco.toString();
+  }
+
+  public Endereco getEnderecoObj() {
+    return endereco;
+  }
+
+  public Boolean getStatus() {
+    return status;
+  }
+
+  @Override
+  public int compareTo(UnidadeFisica uni) {
+    return Integer.compare(this.id, uni.getId());
   }
 
   public String toString() {

@@ -10,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Categoria {
+public class Categoria implements Comparable<Categoria> {
   private int id;
   private String nome, descricao;
 
@@ -18,18 +18,6 @@ public class Categoria {
     this.id = id;
     this.nome = nome;
     this.descricao = descricao;
-  }
-
-  public int getId() {
-    return id;
-  }
-
-  public String getNome() {
-    return nome;
-  }
-
-  public String getDescricao() {
-    return descricao;
   }
 
   public static void cadastrarCategoria(Collection<Categoria> lista) {
@@ -67,6 +55,23 @@ public class Categoria {
       System.out.println("\nerror: There was a problem reading the file");
     }
     return resultado;
+  }
+
+  @Override
+  public int compareTo(Categoria cat) {
+    return Integer.compare(this.id, cat.getId());
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public String getNome() {
+    return nome;
+  }
+
+  public String getDescricao() {
+    return descricao;
   }
 
   public String toString() {

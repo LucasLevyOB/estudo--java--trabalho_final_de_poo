@@ -1,9 +1,9 @@
 Laticínio
-2
-Categoria de Laticínios.
+4
+Categoria de Laticínios Editada
 Enlatados
 1
 Categoria de enlatados
 Cosméticos
-3
+6
 Categoria de cosméticos

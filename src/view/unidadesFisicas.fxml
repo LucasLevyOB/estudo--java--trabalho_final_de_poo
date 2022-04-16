@@ -9,9 +9,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UnidadesFisicas">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="525.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UnidadesFisicas">
    <children>
-      <TableView fx:id="tabela" layoutX="9.0" layoutY="342.0" prefHeight="200.0" prefWidth="509.0">
+      <TableView fx:id="tabela" layoutX="9.0" layoutY="377.0" prefHeight="200.0" prefWidth="509.0">
         <columns>
           <TableColumn fx:id="colunaNome" prefWidth="226.0" text="Nome" />
           <TableColumn fx:id="colunaEndereco" prefWidth="206.0" text="Endereço" />
@@ -19,17 +19,19 @@
         </columns>
       </TableView>
       <Label layoutY="41.0" prefHeight="16.0" prefWidth="425.0" style="-fx-font-size: 16; -fx-alignment: center;" text="Cadastrar e Listar Unidades" />
-      <Button fx:id="cadastrarUnidadeFisica" layoutX="412.0" layoutY="260.0" mnemonicParsing="false" onAction="#cadastrarUnidadeFisica" text="Cadastrar" />
+      <Button fx:id="cadastrarUnidadeFisica" layoutX="413.0" layoutY="290.0" mnemonicParsing="false" onAction="#cadastrarUnidadeFisica" text="Cadastrar" />
       <Group layoutX="12.0" layoutY="91.0" style="-fx-translate-x: 50;">
          <children>
-            <Label style="-fx-font-size: 14;" text="Cadastrar Categorias" />
+            <Label style="-fx-font-size: 14;" text="Cadastrar Unidades" />
             <Label layoutX="1.0" layoutY="34.0" text="Nome:" />
-            <Label layoutX="2.0" layoutY="66.0" text="Endereço:" />
+            <Label layoutX="2.0" layoutY="82.0" text="Endereço:" />
             <TextField fx:id="nomeUnidadeFisica" layoutX="54.0" layoutY="31.0" prefHeight="24.0" prefWidth="323.0" />
-            <TextArea fx:id="enderecoUnidadeFisica" layoutX="2.0" layoutY="90.0" prefHeight="16.0" prefWidth="375.0" />
-            <Label layoutX="2.0" layoutY="137.0" text="Exemplo: Cidade, Bairro, Rua, Numero" />
+            <TextArea fx:id="enderecoUnidadeFisica" layoutX="2.0" layoutY="106.0" prefHeight="16.0" prefWidth="375.0" />
+            <Label layoutX="2.0" layoutY="153.0" text="Exemplo: Cidade, Bairro, Rua, Numero" />
+            <Label fx:id="mensagemNomeUnidade" layoutX="55.0" layoutY="58.0" style="-fx-text-fill: red;" />
+            <Label fx:id="mensagemEnderecoUnidade" layoutY="175.0" style="-fx-text-fill: red;" />
          </children>
       </Group>
-      <Label layoutX="14.0" layoutY="305.0" style="-fx-font-size: 14;" text="Lista de Unidades" />
+      <Label layoutX="14.0" layoutY="340.0" style="-fx-font-size: 14;" text="Lista de Unidades" />
    </children>
 </AnchorPane>

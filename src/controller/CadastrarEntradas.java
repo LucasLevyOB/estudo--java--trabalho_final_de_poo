@@ -5,6 +5,7 @@ import dataHora.DataHora;
 import dataHora.Hora;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextArea;
@@ -41,20 +42,20 @@ public class CadastrarEntradas {
   public void initialize() {
 
     produtoEntrada.getItems().removeAll(produtoEntrada.getItems());
-    for (String startedProd : start.getProdutos().keySet()) {
-      produtoEntrada.getItems().add(startedProd);
+    for (Produto startedProd : start.getProdutosOrdenados()) {
+      produtoEntrada.getItems().add(startedProd.getNome());
     }
     produtoEntrada.getSelectionModel().select("Selecione");
 
     categoriaProduto.getItems().removeAll(categoriaProduto.getItems());
-    for (String startedCat : start.getCategorias().keySet()) {
-      categoriaProduto.getItems().add(startedCat);
+    for (Categoria startedCat : start.getCategoriasOrdenadas()) {
+      categoriaProduto.getItems().add(startedCat.getNome());
     }
     categoriaProduto.getSelectionModel().select("Selecione");
 
     origemEntrada.getItems().removeAll(origemEntrada.getItems());
-    for (String startedUni : start.getUnidades().keySet()) {
-      origemEntrada.getItems().add(startedUni);
+    for (UnidadeFisica startedUni : start.getUnidadesOrdenadas()) {
+      origemEntrada.getItems().add(startedUni.getNome());
     }
     origemEntrada.getSelectionModel().select("Selecione");
   }

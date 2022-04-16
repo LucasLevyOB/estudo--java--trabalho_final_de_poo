@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -35,6 +36,12 @@ public class Categorias {
 
   @FXML
   private TextArea descricaoCategoria;
+  
+  @FXML
+  private Label mensagem;
+
+  @FXML
+  private Button botaoCadastrar;
 
   Armazem start = Armazem.getInstance();
 
@@ -46,10 +53,21 @@ public class Categorias {
     adicionarBotaoDeletar();
   }
 
+  private Boolean verificarCampos() {
+    if (!nomeCategoria.getText().equals("") && !descricaoCategoria.getText().equals(""))
+      return true;
+    return false;
+  }
+
   @FXML
   protected void cadastrarCategoria(ActionEvent event) {
-    start.adicionarCategoria(nomeCategoria.getText(), descricaoCategoria.getText());
-    tabela.setItems(listaDeCategorias());
+    if (verificarCampos()) {
+      start.adicionarCategoria(nomeCategoria.getText(), descricaoCategoria.getText());
+      tabela.setItems(listaDeCategorias());
+      mensagem.setText("");
+    } else {
+      mensagem.setText("Verifique se todos os campos estão preenchidos.");
+    }
   }
 
   @FXML
@@ -137,6 +155,6 @@ public class Categorias {
 
   private ObservableList<Categoria> listaDeCategorias() {
     return FXCollections.observableArrayList(
-        start.getCategorias().values());
+        start.getCategoriasOrdenadas());
   }
 }
